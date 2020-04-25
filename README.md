@@ -14,22 +14,22 @@
 Прописываем конфиг точки доступа.  
 ```
 #Интерфейс, на котором будем поднимать WiFi
-**interface=wlan0**
+interface=wlan0
 #Прописываем имя нашего WiFi
-**ssid=TRAP_AP**
+ssid=TRAP_AP
 #Драйвер - стандартный
-**driver=nl80211**
+driver=nl80211
 #Стандарт WiFi 802.11g. 802.11n требует дополнительных настроек.
-**hw_mode=g**
+hw_mode=g
 #Канал WiFi
-**channel=6**
+channel=6
 #Отключаем блокировку по MAC-адресу. Говорят, лучше прописать. Я прописал.
-**macaddr_acl=0**
+macaddr_acl=0
 #Настройки авторизации. Первая строчка содержит пароль к wifi.
-**wpa_passphrase=securepassword
+wpa_passphrase=securepassword
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=TKIP
 rsn_pairwise=CCMP
-auth_algs=1**
+auth_algs=1
 ```
 	
