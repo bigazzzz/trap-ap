@@ -97,12 +97,11 @@ dhcp-lease-max=100
 
 Выданные адреса храняться в **/var/lib/misc/dnsmasq.leases**
 
-
 На гитхабе выложен полный конфиг в файле [dnsmasq.conf.full](dnsmasq.conf.full), в котором расписаны огромное множество опций конфига.
 ### Даем нашей точке доступа немного Интернета
 Разрешаем форвардинг для IP-пакетов. 
 
-** echo 1 > /proc/sys/net/ipv4/ip_forward
+**echo 1 > /proc/sys/net/ipv4/ip_forward**
 
 Говорим iptables, что нам необходимо перенаправить весь трафик через наш Ethernet-интерфейс.
 
@@ -115,7 +114,7 @@ dhcp-lease-max=100
 
 Таблицу с правилами iptables сохраняем
 
-**iptables-save > /etc/iptables.up.rules **
+**iptables-save > /etc/iptables.up.rules**
 
 И добавляем в файл настройки сети **/etc/network/interfaces** загрузку правил iptables
 
@@ -125,7 +124,7 @@ dhcp-lease-max=100
 
 Устанавливаем tshark и запускаем его на нашем WiFi-интерфейсе.
 
-** apt install -y tshark && tshark -i wlan0 **
+**apt install -y tshark && tshark -i wlan0**
 
 
 Вуаля. ТRAP_AP создана и работает.
