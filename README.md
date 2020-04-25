@@ -7,11 +7,11 @@
 * перехват трафика черeз thark.
 Писал, опираясь на статью с Хабра - https://habr.com/ru/post/188274/. Спасибо за это товарищу @CRImer.
 Итак, устанавливаем программу, для создания точки доступа
-___sudo apt install -y hostapd___
+*sudo apt install -y hostapd*
 После установки запустим hostapd в режиме демона. В файле /etc/defaults/hostapd необходимо раскомментировать строчку DAEMON_CONF и прописать файл конфигурации точки.
-___DAEMON_CONF="/etc/hostapd/hostapd.conf"___
+*DAEMON_CONF="/etc/hostapd/hostapd.conf"*
 Прописываем конфиг точки доступа.
-____
+'''
 #Интерфейс, на котором будем поднимать WiFi
 interface=wlan0
 #Прописываем имя нашего WiFi
@@ -30,5 +30,4 @@ wpa_key_mgmt=WPA-PSK
 wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 auth_algs=1
-____	
-	
+'''	
