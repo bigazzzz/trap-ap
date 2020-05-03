@@ -13,8 +13,10 @@ sudo sed -i "s/eth0/$ETH_IFACE/g" /etc/hostapd/hostapd.conf
 sudo iptables -tnat -A POSTROUTING -o $ETH_IFACE -j MASQUERADE
 sudo echo nameserver 8.8.8.8 >> /etc/resolv.conf
 sudo echo nameserver 8.8.4.4 >> /etc/resolv.conf
-sudo iw dev $WIFI_IFACE disconnect
-sudo ip addr replace 192.168.2.1/24 dev $WIFI_IFACE
+sudo ip addr flush dev $WIFI_IFACE
+sudo ip addr add 192.168.2.1/24 dev $WIFI_IFACE
+sudo systemctl unmask hostapd
+sudo systemctl enable hostapd
 sudo service hostapd start
 sudo service dnsmasq start
 
