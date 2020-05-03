@@ -46,7 +46,8 @@ hw_mode=g
 channel=6
 #Отключаем блокировку по MAC-адресу. Говорят, лучше прописать. Я прописал.
 macaddr_acl=0
-#Настройки авторизации. Первая строчка содержит пароль к wifi.
+#Настройки авторизации. Вторая строчка содержит пароль к wifi.
+wpa=2
 wpa_passphrase=securepassword
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=TKIP
